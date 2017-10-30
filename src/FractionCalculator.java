@@ -3,12 +3,24 @@ import  java.util.Arrays;
 public class FractionCalculator {
 
     public static void main(String[] args) {
-        //String op = getOperation();
-        //System.out.println(op);
-        //boolean is = validFraction("67/5");
-        //System.out.println(is);
-        Fraction f = getFraction();
-        System.out.println(f);
+        greeting();
+        String op = getOperation();
+        while (!(op.toUpperCase().equals("Q"))) {
+            Fraction f1 = getFraction();
+            Fraction f2 = getFraction();
+            Fraction result = new Fraction();
+            if (op.equals("+")) {
+                result = f1.add(f2);
+            } else if (op.equals("-")) {
+                result = f1.subtract(f2);
+            } else if (op.equals("/")) {
+                result = f1.divide(f2);
+            } else if (op.equals("*")) {
+                result = f1.multiply(f2);
+            }
+            System.out.println(result);
+            op = getOperation();
+        }
     }
 
     public static String getOperation() {
@@ -34,8 +46,8 @@ public class FractionCalculator {
                 return false;
             } else {
                 if (isNumber(arr[0]) && isNumber(arr[1])) {
-                    System.out.println(Integer.parseInt(arr[0]));
-                    System.out.println(Integer.parseInt(arr[1]));
+//                    System.out.println(Integer.parseInt(arr[0]));
+//                    System.out.println(Integer.parseInt(arr[1]));
                     if (Integer.parseInt(arr[1]) == 0) {
                         return false;
                     } else {
@@ -71,6 +83,10 @@ public class FractionCalculator {
         int den = Integer.parseInt(arr[1]);
         Fraction newFraction = new Fraction(num, den);
         return newFraction;
+    }
+
+    public static void greeting() {
+        System.out.println("Hello, this is a fraction calculator. It will add, subtract, multiply and divide fractions until you press Q to quit.");
     }
 
  }

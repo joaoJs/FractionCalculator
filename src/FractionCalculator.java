@@ -37,17 +37,14 @@ public class FractionCalculator {
     public static boolean validFraction(String input) {
         if (input.indexOf("-") > 0) {
             return false;
-        } else if (input.indexOf("/") == -1) {
+        } else if (input.indexOf("/") == -1 || input.charAt(input.length() - 1) == '/') {
             return false;
         } else {
             String[] arr = input.split("[/]");
-            //System.out.println(Arrays.toString(arr));
             if (arr.length > 2) {
                 return false;
             } else {
                 if (isNumber(arr[0]) && isNumber(arr[1])) {
-//                    System.out.println(Integer.parseInt(arr[0]));
-//                    System.out.println(Integer.parseInt(arr[1]));
                     if (Integer.parseInt(arr[1]) == 0) {
                         return false;
                     } else {

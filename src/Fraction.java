@@ -67,7 +67,6 @@ public class Fraction {
         }
         Fraction addedFraction = new Fraction(num, den);
         addedFraction.toLowestTerms();
-        //System.out.println("Here --> " + addedFraction.toString());
         return addedFraction;
     }
 
@@ -94,7 +93,6 @@ public class Fraction {
         }
         Fraction subtractedFraction = new Fraction(num, den);
         subtractedFraction.toLowestTerms();
-        //System.out.println("Here --> " + subtractedFraction.toString());
         return subtractedFraction;
     }
 
@@ -103,7 +101,6 @@ public class Fraction {
         int den = this.denominator * other.denominator;
         Fraction multipliedFraction = new Fraction(num, den);
         multipliedFraction.toLowestTerms();
-        //System.out.println(multipliedFraction);
         return multipliedFraction;
     }
 
@@ -112,7 +109,6 @@ public class Fraction {
         int den = this.denominator * other.numerator;
         Fraction dividedFraction = new Fraction(num, den);
         dividedFraction.toLowestTerms();
-        //System.out.println(dividedFraction);
         return dividedFraction;
     }
 
@@ -122,8 +118,6 @@ public class Fraction {
         } else {
             this.toLowestTerms();
             other.toLowestTerms();
-//            System.out.println(this);
-//            System.out.println(other);
             return this.toString().equals(other.toString());
         }
     }

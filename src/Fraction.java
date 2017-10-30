@@ -3,9 +3,10 @@ public class Fraction {
     private int denominator;
 
     public static void main(String[] args) {
-        Fraction first = new Fraction(2,2);
+        Fraction first = new Fraction(4,4);
         Fraction second = new Fraction(4,2);
-        first.add(second);
+        boolean is = first.equals(second);
+        System.out.print(is);
     }
 
     public Fraction(int num, int den) {
@@ -115,9 +116,17 @@ public class Fraction {
         return dividedFraction;
     }
 
-//    public boolean equals(Fraction other) {
-//
-//    }
+    public boolean equals(Fraction other) {
+        if (!(other instanceof Fraction)) {
+            return false;
+        } else {
+            this.toLowestTerms();
+            other.toLowestTerms();
+            System.out.println(this);
+            System.out.println(other);
+            return this.toString().equals(other.toString());
+        }
+    }
 
     public void toLowestTerms() {
         int gcd = gcd(this.numerator, this.denominator);

@@ -5,8 +5,10 @@ public class FractionCalculator {
     public static void main(String[] args) {
         //String op = getOperation();
         //System.out.println(op);
-        boolean is = validFraction("67/5");
-        System.out.println(is);
+        //boolean is = validFraction("67/5");
+        //System.out.println(is);
+        Fraction f = getFraction();
+        System.out.println(f);
     }
 
     public static String getOperation() {
@@ -27,7 +29,7 @@ public class FractionCalculator {
             return false;
         } else {
             String[] arr = input.split("[/]");
-            System.out.println(Arrays.toString(arr));
+            //System.out.println(Arrays.toString(arr));
             if (arr.length > 2) {
                 return false;
             } else {
@@ -55,4 +57,20 @@ public class FractionCalculator {
         }
         return true;
     }
+
+    public static Fraction getFraction() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please enter (a/b), where a and b are integers and b is not less than 1: ");
+        String fraction = input.next();
+        while (!(validFraction(fraction))) {
+            System.out.print("Please enter (a/b), where a and b are integers and b is not less than 1: ");
+            fraction = input.next();
+        }
+        String[] arr = fraction.split("[/]");
+        int num = Integer.parseInt(arr[0]);
+        int den = Integer.parseInt(arr[1]);
+        Fraction newFraction = new Fraction(num, den);
+        return newFraction;
+    }
+
  }

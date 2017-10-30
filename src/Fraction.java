@@ -2,12 +2,12 @@ public class Fraction {
     private int numerator;
     private int denominator;
 
-    public static void main(String[] args) {
-        Fraction first = new Fraction(4,4);
-        Fraction second = new Fraction(4,2);
-        boolean is = first.equals(second);
-        System.out.print(is);
-    }
+//    public static void main(String[] args) {
+//        Fraction first = new Fraction(4,4);
+//        Fraction second = new Fraction(4,2);
+//        boolean is = first.equals(second);
+//        System.out.print(is);
+//    }
 
     public Fraction(int num, int den) {
         if (den == 0) {

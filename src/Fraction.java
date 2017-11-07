@@ -91,9 +91,14 @@ public class Fraction {
             num = (this.numerator * other.denominator / this.denominator) - (other.numerator * other.denominator / cons);
             den = other.denominator;
         }
-        Fraction subtractedFraction = new Fraction(num, den);
-        subtractedFraction.toLowestTerms();
-        return subtractedFraction;
+        if (num == 0) {
+            Fraction zero = new Fraction(0, 1);
+            return zero;
+        } else {
+            Fraction subtractedFraction = new Fraction(num, den);
+            subtractedFraction.toLowestTerms();
+            return subtractedFraction;
+        }
     }
 
     public Fraction multiply(Fraction other) {
